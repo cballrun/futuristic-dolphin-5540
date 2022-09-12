@@ -33,12 +33,18 @@ RSpec.describe 'the Mechanic show' do
 
   it 'lists rides by thrill rating in descending order' do
     within("#ride_0") do
-      save_and_open_page
+      
       expect(page).to have_content(@hurler.name)
       expect(page).to_not have_content(@scrambler.name)
     end
-
   end
+
+  it 'has a form to add a ride to a mechanic' do
+    fill_in(:ride_id, with: @ferris.id)
+    click_button "Add Ride to Mechanic"
+  end
+
+
 
 
 
