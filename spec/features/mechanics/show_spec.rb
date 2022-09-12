@@ -8,6 +8,7 @@ RSpec.describe 'the Mechanic show' do
     @hurler = @six_flags.rides.create!(name: 'The Hurler', thrill_rating: 7, open: true)
     @scrambler = @six_flags.rides.create!(name: 'The Scrambler', thrill_rating: 4, open: true)
     @ferris = @six_flags.rides.create!(name: 'Ferris Wheel', thrill_rating: 7, open: true)
+    # @closed = @six_flags.rides.create!(name: 'Closed', thrill_rating: 7, open: false)
 
     @jaws = @universal.rides.create!(name: 'Jaws', thrill_rating: 5, open: true)
     
