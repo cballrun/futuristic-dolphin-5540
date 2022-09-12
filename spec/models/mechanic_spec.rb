@@ -11,4 +11,16 @@ RSpec.describe Mechanic, type: :model do
     it { should have_many(:rides).through(:mechanic_rides) }
   end
 
+
+  describe 'class methods' do
+    before :each do
+      @ricky = Mechanic.create!(name: "Ricky", years_of_experience: 7)
+      @randy = Mechanic.create!(name: "Randy", years_of_experience: 10)
+    end
+  
+    it 'can tell the average years of experience for all mechanics' do
+      expect(Mechanic.average_years_exp).to eq(8.5)
+    end
+  end
+
 end
