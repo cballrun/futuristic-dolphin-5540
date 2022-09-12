@@ -9,6 +9,8 @@ RSpec.describe 'the Mechanics index' do
 
     @ricky = Mechanic.create!(name: "Ricky", years_of_experience: 7)
     @randy = Mechanic.create!(name: "Randy", years_of_experience: 10)
+
+    visit "/mechanics"
   end
 
   it 'lists the names of all mechanics and their years of experience' do
