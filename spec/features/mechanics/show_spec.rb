@@ -32,7 +32,11 @@ RSpec.describe 'the Mechanic show' do
   end
 
   it 'lists rides by thrill rating in descending order' do
-    
+    within("#ride_0") do
+      save_and_open_page
+      expect(page).to have_content(@hurler.name)
+      expect(page).to_not have_content(@scrambler.name)
+    end
 
   end
 
