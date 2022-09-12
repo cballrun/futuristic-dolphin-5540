@@ -1,9 +1,9 @@
 <h1> Mechanic: <%= @mechanic.name %> </h1>
 
-<li>
   Years of Experience: <%= @mechanic.years_of_experience %>
-</li>
 
-<% @rides.each do |ride| %>
+<% @rides.thrill_sort.each_with_index do |ride, index| %>
+  <li id="ride_<%=index %>" >
   <p>Working On: <%= ride.name %> </p>
+  </li>
 <%end%>

@@ -32,6 +32,9 @@ RSpec.describe 'the Mechanic show' do
   end
 
   it 'lists rides by thrill rating in descending order' do
+    
+
+  end
 
 
 

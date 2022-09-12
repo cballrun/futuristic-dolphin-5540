@@ -12,4 +12,13 @@ RSpec.describe Ride, type: :model do
     it {should validate_presence_of :thrill_rating}
     it {should validate_presence_of :open}
   end
+
+  it 'sorts rides by thrill rating in descending order' do
+    @six_flags = AmusementPark.create!(name: 'Six Flags', admission_cost: 75)
+
+    @hurler = @six_flags.rides.create!(name: 'The Hurler', thrill_rating: 7, open: true)
+    @scrambler = @six_flags.rides.create!(name: 'The Scrambler', thrill_rating: 4, open: true)
+
+    expect(Ride.thrill_sort).to eq([@hurler, @scrambler])
+  end
 end
