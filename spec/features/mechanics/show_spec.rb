@@ -40,8 +40,13 @@ RSpec.describe 'the Mechanic show' do
   end
 
   it 'has a form to add a ride to a mechanic' do
+    expect(page).to_not have_content(@ferris.name)
+    
     fill_in(:ride_id, with: @ferris.id)
     click_button "Add Ride to Mechanic"
+    
+    expect(current_path).to eq("/mechanics/#{@ricky.id}")
+    expect(page).to have_content(@ferris.name)
   end
 
 
