@@ -20,7 +20,7 @@ RSpec.describe 'the Mechanics index' do
       expect(page).to have_content("Years of Experience: 7")
       expect(page).to_not have_content("Name: Randy")
     end
-   
+    
     within("#mechanic_#{@randy.id}") do
 
       expect(page).to have_content("Name: Randy")
@@ -30,7 +30,7 @@ RSpec.describe 'the Mechanics index' do
 
   end
 
-  xit 'shows the average years of experience across all mechanics' do
-    
+  it 'shows the average years of experience across all mechanics' do
+    expect(page).to have_content("Average Years of Experience for All Mechanics: 8.5")
   end
 end
