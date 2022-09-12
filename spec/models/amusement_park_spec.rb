@@ -9,4 +9,6 @@ RSpec.describe AmusementPark, type: :model do
     it {should validate_presence_of :name}
     it {should validate_presence_of :admission_cost}
   end
+
+  
 end
