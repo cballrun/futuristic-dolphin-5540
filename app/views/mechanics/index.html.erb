@@ -1,4 +1,6 @@
 <% @mechanics.each do |mechanic| %>
-  <%= mechanic.name %>
-  <%= mechanic.years_of_experience %>
+  <li id="mechanic_<%=mechanic.id %>" >
+  <p> Name: <%= mechanic.name %> </p>
+  <p> Years of Experience: <%= mechanic.years_of_experience %> </p>
+  </li>
 <% end %>
